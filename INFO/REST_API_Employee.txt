@@ -1,0 +1,106 @@
+
+REST API Employee
+---------------------
+Postman для тесту REST API
+https://www.postman.com/
+
+1) Отримання всіх даних
+
+GET
+http://localhost:8080/api/v1/employees
+
+
+2) Створення даних
+
+POST
+http://localhost:8080/api/v1/employees
+
+
+(1)
+{
+	"firstName": "Andrii",
+	"lastName": "Shchelakov",
+	"position": "Father",
+	"phone": "+38 050 576-38-36"
+}
+
+(2)
+{
+	"firstName": "Tetiana",
+    "lastName": "Shchelakova",
+    "position": "Mother",
+    "phone": "+38 099 458-23-09"
+}
+
+(3)
+{
+	"firstName": "Yaroslav",
+    "lastName": "Shchelakov",
+    "position": "Son",
+    "phone": "+38 093 674-00-66"
+}
+
+(4)
+{
+	"firstName": "Vlad",
+    "lastName": "Gur",
+    "position": "Best friend",
+    "phone": "+38 098 345-77-23"
+}
+
+(5)
+{
+	"firstName": "Nazar",
+    "lastName": "Zider",
+    "position": "Friend",
+    "phone": "+38 50 853-41-98"
+}
+
+
+3) Отримання даних за id
+
+GET
+http://localhost:8080/api/v1/employees/2
+
+
+4) REST-запит на оновлення даних за id
+
+PUT
+http://localhost:8080/api/v1/employees/2
+
+Налаштування в Postman: Body, raw, JSON.
+
+{
+	"position": "Mother and Wife"
+}
+
+5) Отримання даних за firstName
+
+GET
+http://localhost:8080/api/v1/employees/first-name/Vlad
+http://localhost:8080/api/v1/employees/first-name/Nazar
+Відсутнє
+http://localhost:8080/api/v1/employees/first-name/Dima
+
+
+6) Отримання даних за lastName
+
+GET
+http://localhost:8080/api/v1/employees/last-name/Shchelakov
+http://localhost:8080/api/v1/employees/last-name/Gur
+Відсутнє
+http://localhost:8080/api/v1/employees/last-name/Pichkur
+
+7) Отримання даних за position
+
+GET
+http://localhost:8080/api/v1/employees/position/Son
+http://localhost:8080/api/v1/employees/position/Friend
+Відсутнє
+http://localhost:8080/api/v1/employees/position/Brother
+
+8) Видалення даних за id
+
+DELETE
+http://localhost:8080/api/v1/employees/5
+
